@@ -49,6 +49,48 @@
         <item name="android:layout_height">wrap_content</item>
 
     </style>
+    <style name="btnDangNhap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:text">Đăng nhập</item>
+        <item name="android:background">@drawable/botron_button</item>
+    </style>
+    <style name="btnDangKi">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.4</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:text">Đăng kí</item>
+        <item name="android:background">@drawable/botron_button</item>
+    </style>
+    <style name="btnGoogle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:text">Connect with your Google Account</item>
+        <item name="android:drawableRight">@drawable/ic_muiten</item>
+        <item name="android:background">@drawable/botron_button</item>
+    </style>
+
+    <style name="btnFacebook">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:text">Connect with your facebook</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:drawableRight">@drawable/ic_muiten</item>
+        <item name="android:radius">25dp</item>
+        <item name="android:background">@drawable/botron_buttontwo</item>
+
+    </style>
 
 
 

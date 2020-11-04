@@ -25,18 +25,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/btnDangNhap"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="3"
-            android:layout_marginTop="10dp"
-            android:background="#DAB88D"
-            android:text="Đăng Nhập "
+            style="@style/btnDangNhap"
+            />
+        <Button
+            android:id="@+id/btnDangKi"
+            style="@style/btnDangKi"
             />
 
 
+
     </LinearLayout>
+<!--    <com.google.android.gms.common.SignInButton-->
+<!--        android:id="@+id/btn_google_signin"-->
+<!--        style="@style/btnGoogle"/>-->
+
+    <Button
+        android:id="@+id/btnsignin"
+        style="@style/btnGoogle"
+        />
+    <Button
+        android:id="@+id/btnfacebook"
+        style="@style/btnFacebook"
+        />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="Forgot your password?"
+        />
 
 </LinearLayout>
+
+
+
