@@ -15,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class LoginActivity extends AppCompatActivity {
     Button btnsignin;
     GoogleSignInClient mGoogleSignInClient;
@@ -68,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
             // updateUI(account);
             Intent i=new Intent(LoginActivity.this,MainActivity.class);
             startActivity(i);
+            //Animation Intent
+            overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
