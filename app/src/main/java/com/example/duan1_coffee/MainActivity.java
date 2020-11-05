@@ -15,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import maes.tech.intentanim.CustomIntent;
+
 public class MainActivity extends AppCompatActivity {
     Button logout;
     GoogleSignInClient mGoogleSignInClient;
@@ -53,4 +55,5 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }
