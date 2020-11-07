@@ -8,7 +8,10 @@
     android:orientation="vertical"
     android:background="@drawable/manhinhchao">
 
-
+    <TextView
+        android:id="@+id/tvLogin"
+        android:text="LOGIN..."
+       style="@style/TextTieuDe" />
     <EditText
         android:id="@+id/txtUsername"
         style="@style/EditLogin"/>
@@ -45,10 +48,11 @@
         android:id="@+id/btnsignin"
         style="@style/btnGoogle"
         />
-    <Button
+
+    <com.facebook.login.widget.LoginButton
         android:id="@+id/btnfacebook"
         style="@style/btnFacebook"
-        />
+        android:layout_height="46dp" />
 
     <TextView
         android:id="@+id/tv1"
@@ -60,6 +64,7 @@
         android:layout_gravity="center"
         android:text="Forgot your password?"
         />
+
 
 </LinearLayout>
 

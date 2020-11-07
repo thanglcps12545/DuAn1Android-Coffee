@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/giaodiennguoidung">
+
+
+    <ImageView
+        android:id="@+id/imgGG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/botron_img" />
+
+
+    <TextView
+        android:id="@+id/nameGG"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
+        />
+
+    <TextView
+        android:id="@+id/gmailGG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="50dp" />
+
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif"
+        android:text="Log Out"
+        android:textStyle="bold" />
+<!--    <com.facebook.login.widget.LoginButton-->
+<!--        android:id="@+id/btnfacebookk"-->
+<!--        android:layout_marginTop="400dp"-->
+<!--        style="@style/btnFacebook"-->
+<!--        />-->
+
+</RelativeLayout>

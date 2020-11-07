@@ -10,14 +10,17 @@
     android:background="@drawable/manhinhchao">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/tvManHinhChao"
+        android:text="START YOUR DAY FRESH !"
+        style="@style/TextTieuDe"
+        />
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="280dp"
+        android:textSize="15dp"
         android:layout_gravity="center"
         android:text="Please wait....."
         />

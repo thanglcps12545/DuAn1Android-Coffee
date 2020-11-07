@@ -17,13 +17,11 @@ public class ManHinhChaoActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                //Animation Intent
-//                CustomIntent.customType(ManHinhChaoActivity.this,"fadein-to-fadeout");
-
-                //Animation Intent
+                //Animation Intent(hieu ung qua trai dep mat)
                 overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
                 finish();
             }
+            //Sau 2s chuyen qua LoginActivity.class
         }, 2000);
 
     }

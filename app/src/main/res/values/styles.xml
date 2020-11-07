@@ -12,12 +12,22 @@
 
 
 
+    <style name="TextTieuDe">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">120dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">50dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="EditLogin">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20dp</item>
-        <item name="android:layout_marginTop">200dp</item>
+        <item name="android:layout_marginTop">20dp</item>
         <item name="android:layout_marginLeft">30dp</item>
         <item name="android:layout_marginRight">30dp</item>
         <item name="android:textColor">#FFFFFF</item>
@@ -77,11 +87,12 @@
         <item name="android:text">Connect with your Google Account</item>
         <item name="android:drawableRight">@drawable/ic_muiten</item>
         <item name="android:background">@drawable/botron_button</item>
+        <item name="android:drawableLeft">@drawable/icongg</item>
     </style>
 
     <style name="btnFacebook">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:layout_marginLeft">20dp</item>
@@ -92,6 +103,17 @@
         <item name="android:background">@drawable/botron_buttontwo</item>
 
     </style>
+
+
+
+    <style name="bottomNavigation">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@color/colorBrown</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
 
 
 
