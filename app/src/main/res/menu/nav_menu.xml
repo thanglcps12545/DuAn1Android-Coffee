@@ -3,17 +3,17 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/abc"
-            android:icon="@drawable/ic_account"
-            android:title="Người dùng" />
+            android:icon="@drawable/user"
+            android:title="Tài Khoản" />
         <item
             android:id="@+id/abcd"
-            android:icon="@drawable/icongg"
-            android:title="Thể loại"/>
+            android:icon="@drawable/key"
+            android:title="Đổi mật khẩu"/>
 
         <item
             android:id="@+id/abcde"
-            android:icon="@drawable/ic_face"
-            android:title="Sách"
+            android:icon="@drawable/log_out"
+            android:title="Log out"
             />
 
     </group>

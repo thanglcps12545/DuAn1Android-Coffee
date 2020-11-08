@@ -15,17 +15,18 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             />
+
         <FrameLayout
             android:id="@+id/fr_ly"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="545dp" />
 
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nv_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="600dp"
         app:headerLayout="@layout/nav_header"
         android:layout_gravity="start"
         app:menu="@menu/nav_menu"/>

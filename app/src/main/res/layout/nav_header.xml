@@ -28,7 +28,7 @@
 <!--        android:layout_height="wrap_content"/>-->
 
     <ImageView
-        android:id="@+id/imgGG"
+        android:id="@+id/imgnav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -37,7 +37,7 @@
 
 
     <TextView
-        android:id="@+id/nameGG"
+        android:id="@+id/namenav"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:textColor="#FF9800"
@@ -46,7 +46,7 @@
         />
 
     <TextView
-        android:id="@+id/gmailGG"
+        android:id="@+id/gmailnav"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:textColor="#FF9800"

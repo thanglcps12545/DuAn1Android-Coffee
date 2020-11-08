@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/giaodiennguoidung">
+
+
+
+    <TextView
+        android:id="@+id/tieudecon"
+        style="@style/khungtieude"
+        android:text="Tài Khoản"
+        />
+
+
+    <LinearLayout
+        android:background="#32222B"
+        android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        >
+
+    </LinearLayout>
+
+</RelativeLayout>

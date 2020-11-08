@@ -24,7 +24,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 public class New_Fragment extends androidx.fragment.app.Fragment {
-    Button logout;
     GoogleSignInClient mGoogleSignInClient;
     ImageView imgGG;
     TextView nameGG,gmailGG;
@@ -54,36 +53,11 @@ public class New_Fragment extends androidx.fragment.app.Fragment {
 
         }
 
-        //Button Logout gmail
-        logout=view.findViewById(R.id.btnLogout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    // ...
-                    case R.id.btnLogout:
-                        signOut();
-                        break;
-                    // ...
-                }
-            }
-        });
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
 
         return view;
-    }
-
-    private void signOut() {
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(getContext(),"baibai",Toast.LENGTH_LONG).show();
-                        getActivity().finish();
-                    }
-                });
     }
 }
