@@ -49,11 +49,10 @@
         style="@style/btnGoogle"
         />
 
-    <com.facebook.login.widget.LoginButton
+    <Button
         android:id="@+id/btnfacebook"
         style="@style/btnFacebook"
-        android:layout_height="46dp" />
-
+        />
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"

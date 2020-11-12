@@ -88,19 +88,23 @@
         <item name="android:drawableRight">@drawable/ic_muiten</item>
         <item name="android:background">@drawable/botron_button</item>
         <item name="android:drawableLeft">@drawable/icongg</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
     </style>
 
     <style name="btnFacebook">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:text">Connect with your facebook</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:drawableRight">@drawable/ic_muiten</item>
-        <item name="android:radius">25dp</item>
         <item name="android:background">@drawable/botron_buttontwo</item>
+        <item name="android:drawableLeft">@drawable/facebook</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
 
     </style>
 

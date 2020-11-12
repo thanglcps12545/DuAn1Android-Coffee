@@ -6,11 +6,15 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import com.facebook.CallbackManager;
+import com.facebook.login.LoginManager;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import fragment.Home_Fragment;
 import fragment.Info_Fragment;
@@ -19,23 +23,16 @@ import fragment.New_Fragment;
 import fragment.User_Fragment;
 
 public class MainActivity extends AppCompatActivity {
-    Button logout;
-    String email,name;
-    LoginButton logoutFB;
-    CallbackManager callbackManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Anh xa
 
 //       logoutFB=findViewById(R.id.btnfacebookk);
         BottomNavigationView bottomNav=findViewById(R.id.bottom_navigation);
 
-//        setLogout_Button();
-
-//        callbackManager=CallbackManager.Factory.create();
-//        logoutFB.setReadPermissions(Arrays.asList("public_profile","email"));
 
 
         //Selected icon bottom navigation(add may tam hinh icon vao bottom navigation)
@@ -52,21 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    //Su kien dang xuat button
-//    private void setLogout_Button() {
-//        logoutFB.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                LoginManager.getInstance().logOut();
-//                //set text lai de khi dang nhap lai ko su dung json cua tai khoan truoc
-//                Intent i=new Intent(MainActivity.this,LoginActivity.class);
-//                startActivity(i);
-//                nameGG.setText("");
-//                gmailGG.setText("");
-//
-//            }
-//        });
-//    }
+
 
 
     //Bat su kien click cho cac bottom navigation

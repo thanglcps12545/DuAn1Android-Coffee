@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">DuAn1-Coffee</string>
-<!--    <string name="facebook_app_id">1295318810827190</string>-->
-    <string name="facebook_app_id">2755317708082744</string>
-<!--    <string name="facebook_app_id">389322682220884</string>-->
+    <string name="facebook_app_id">826500564768936</string>
+    <string name="fb_login_protocol_scheme">fb826500564768936</string>
 
     <string name="Open">Open</string>
     <string name="Close">Close</string>

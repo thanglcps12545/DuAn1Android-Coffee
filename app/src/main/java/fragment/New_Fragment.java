@@ -22,19 +22,22 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class New_Fragment extends androidx.fragment.app.Fragment {
     GoogleSignInClient mGoogleSignInClient;
     ImageView imgGG;
     TextView nameGG,gmailGG;
-    String email,name;
-    LoginButton logoutFB;
-    CallbackManager callbackManager;
+    FirebaseAuth mAuth;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_new, container, false);
+        //Initialise firebase
+        mAuth = FirebaseAuth.getInstance();
+        final FirebaseUser mUser=mAuth.getCurrentUser();
         //Anh xa
         imgGG=view.findViewById(R.id.imgGG);
         nameGG=view.findViewById(R.id.nameGG);
@@ -57,6 +60,18 @@ public class New_Fragment extends androidx.fragment.app.Fragment {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
+
+
+
+        //xuat thong tin nguoi dung gmail
+        if(mUser != null){
+            String name= mUser.getDisplayName();
+            String email= mUser.getEmail();
+            String photoURL= mUser.getPhotoUrl().toString();
+            Glide.with(getActivity()).load(photoURL).into(imgGG);
+            nameGG.setText(name);
+            gmailGG.setText(email);
+        }
 
         return view;
     }
