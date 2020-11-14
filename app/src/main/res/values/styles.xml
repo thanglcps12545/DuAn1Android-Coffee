@@ -11,12 +11,11 @@
     </style>
 
 
-
     <style name="TextTieuDe">
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginTop">120dp</item>
+        <item name="android:layout_marginTop">100dp</item>
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">50dp</item>
@@ -128,6 +127,79 @@
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:background">@drawable/botron_buttonthree</item>
         <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+
+
+
+    <style name="listviewNews">
+        <item name="android:layout_width">340dp</item>
+        <item name="android:layout_height">420dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/botron_news2</item>
+    </style>
+    <style name="listviewNews2">
+        <item name="android:layout_width">340dp</item>
+        <item name="android:layout_height">420dp</item>
+<!--        <item name="android:alpha">0.8</item>-->
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+
+    <style name="tvnews">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">COFFEE</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/boitron_ic</item>
+
+    </style>
+
+    <style name="backgroundrcv">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">450dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:alpha">0.9</item>
+        <item name="android:layout_marginTop">80dp</item>
+        <item name="android:background">@drawable/background_rcv</item>
+    </style>
+
+    <style name="backgroundtv">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">INFO</item>
+        <item name="android:layout_marginTop">-450dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:color">#f89e34</item>
+        <item name="android:background">@drawable/botron_buttonthree</item>
+
+    </style>
+
+    <style name="tvpleasewait">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">Forgot your password?</item>
+    </style>
+    <style name="tvpleasewait2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_marginTop">320dp</item>
+        <item name="android:text">Please wait...</item>
     </style>
 
 

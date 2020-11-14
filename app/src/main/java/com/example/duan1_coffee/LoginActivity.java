@@ -11,8 +11,10 @@ import android.content.pm.Signature;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -33,36 +35,50 @@ import com.google.android.gms.tasks.Task;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+import model.User;
+
 public class LoginActivity extends AppCompatActivity {
-    Button btnsignin,btndangnhap;
+    Button btnsignin,btndangnhap,btnDangKi;
+    EditText txtUser,txtPassword;
     GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=0;
     CallbackManager mCallbackManager;
     Button btnFacebook;
-//    LoginButton loginButton;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         //Initialise Facebook SDK
         FacebookSdk.sdkInitialize(LoginActivity.this);
         //Initialise firebase
         mAuth = FirebaseAuth.getInstance();
-
         //Anh xa
         btnsignin=findViewById(R.id.btnsignin);
         btndangnhap=findViewById(R.id.btnDangNhap);
+        txtUser=findViewById(R.id.txtUsername);
+        txtPassword=findViewById(R.id.txtPassword);
+        btnDangKi=findViewById(R.id.btnDangKi);
+        btnDangKi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(LoginActivity.this,DangKiTKActivity.class);
+                startActivity(i);
+            }
+        });
+
 
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
@@ -93,22 +109,56 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
         //Test nut dang nhap chuyen qua New Fragment(bam nut nay cho nhanh thay vi bam google)
         btndangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(i);
+                final String email=txtUser.getText().toString().trim();
+                final String password=txtPassword.getText().toString().trim();
+
+                if(email.isEmpty()){
+                    txtUser.setError("Bạn chưa nhập email");
+                    txtUser.requestFocus();
+                    return;
+                }
+                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    txtUser.setError("Email sai định dạng");
+                    txtUser.requestFocus();
+                    return;
+                }
+//
+//                if(password.isEmpty() || password.length() <6){
+//                    txtPassword.setError("6 char password required");
+//                    txtPassword.requestFocus();
+//                    return;
+//                }
+                if(password.isEmpty()){
+                    txtPassword.setError("Bạn chưa nhập password");
+                    txtPassword.requestFocus();
+                    return;
+                }
+
+                //Authenticate the user
+
+                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            FirebaseDatabase.getInstance().getReference("Users");
+                            Toast.makeText(LoginActivity.this,"Đăng nhập thành công!",Toast.LENGTH_LONG).show();
+                            Intent i=new Intent(LoginActivity.this,MainActivity.class);
+                            startActivity(i);
+                        }else {
+                            Toast.makeText(LoginActivity.this,"Lỗi !"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+//                Intent i=new Intent(LoginActivity.this,MainActivity.class);
+//                startActivity(i);
 
             }
         });
-
-
 
         //Button sign in Google
         btnsignin.setOnClickListener(new View.OnClickListener() {
@@ -127,8 +177,11 @@ public class LoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
     }
+
+
+
+
 
     //Goi du lieu cho sign google
     private void signIn() {
@@ -148,15 +201,16 @@ public class LoginActivity extends AppCompatActivity {
             handleSignInResult(task);
         }
     }
-
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
             // updateUI(account);
-            Intent i=new Intent(LoginActivity.this,MainActivity.class);
-            startActivity(i);
+            if(account != null) {
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+            }
             //Animation Intent
             overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
         } catch (ApiException e) {
@@ -168,11 +222,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
+//Goi du lieu facebook
     private void handleFacebookAccessToken(AccessToken token) {
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential)
@@ -210,7 +260,9 @@ public class LoginActivity extends AppCompatActivity {
             updateUI(currentUser);
         }
         updateUI(currentUser);
+
     }
+
 
 
 }

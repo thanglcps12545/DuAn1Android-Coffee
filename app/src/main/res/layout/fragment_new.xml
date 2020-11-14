@@ -17,7 +17,8 @@
         android:id="@+id/nameGG"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textSize="30dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:textColor="@color/colorWhite"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="80dp"
@@ -30,6 +31,29 @@
         android:textColor="@color/colorWhite"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="50dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/tvnews"/>
+
+        <RelativeLayout
+            style="@style/listviewNews"
+            android:id="@+id/abc">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    style="@style/listviewNews2"
+                    android:id="@+id/rcvNews" />
+
+        </RelativeLayout>
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            style="@style/listviewNews"-->
+        <!--            android:id="@+id/rcvNews" />-->
+    </LinearLayout>
 
 
 </RelativeLayout>

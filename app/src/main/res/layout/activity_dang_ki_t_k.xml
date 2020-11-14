@@ -8,54 +8,43 @@
     android:orientation="vertical"
     android:background="@drawable/manhinhchao">
 
+
     <TextView
         android:id="@+id/tvLogin"
-        android:text="LOGIN..."
-       style="@style/TextTieuDe" />
+        android:text="Đăng Kí"
+        android:layout_marginTop="150dp"
+        style="@style/TextTieuDe" />
     <EditText
-        android:id="@+id/txtUsername"
+        android:id="@+id/txtfullname"
+        android:drawableLeft="@drawable/icongg"
+        style="@style/EditLogin"/>
+    <EditText
+        android:id="@+id/txtUserDk"
         style="@style/EditLogin"/>
 
     <EditText
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtPasswordDk"
         style="@style/EditLogin2"
         />
-    <CheckBox
-        android:id="@+id/checkbox"
-        style="@style/Checkbox"
-         />
+    <EditText
+        android:id="@+id/txtSDT"
+        android:drawableLeft="@drawable/icongg"
+        style="@style/EditLogin2"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btnDangNhap"
+            android:id="@+id/btnDangKi2"
             style="@style/btnDangNhap"
+            android:text="Đăng Kí"
             />
-        <Button
-            android:id="@+id/btnDangKi"
-            style="@style/btnDangKi"
-            />
+
 
 
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnsignin"
-        style="@style/btnGoogle"
-        />
-
-    <Button
-        android:id="@+id/btnfacebook"
-        style="@style/btnFacebook"
-        />
-    <TextView
-        android:id="@+id/tv1"
-        style="@style/tvpleasewait"
-        />
-
-
 </LinearLayout>
 
 

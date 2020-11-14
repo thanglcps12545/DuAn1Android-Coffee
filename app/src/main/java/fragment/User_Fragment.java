@@ -71,10 +71,11 @@ public class User_Fragment extends androidx.fragment.app.Fragment {
         if (acct != null) {
             String personName = acct.getDisplayName();
             String personEmail = acct.getEmail();
-            Uri personPhoto = acct.getPhotoUrl();
+//            Uri personPhoto = acct.getPhotoUrl();
             txtname.setText(personName);
             txtgmail.setText(personEmail);
-            Glide.with(this).load(String.valueOf(personPhoto)).into(imgnav);
+//            Glide.with(this).load(String.valueOf(personPhoto)).into(imgnav);
+            Glide.with(this).load(acct.getPhotoUrl()).into(imgnav);
 
         }
 
@@ -82,8 +83,9 @@ public class User_Fragment extends androidx.fragment.app.Fragment {
         if(mUser != null){
             String name= mUser.getDisplayName();
             String email= mUser.getEmail();
-            String photoURL= mUser.getPhotoUrl().toString();
-            Glide.with(getActivity()).load(photoURL).into(imgnav);
+//            String photoURL= mUser.getPhotoUrl().toString();
+//            Glide.with(getActivity()).load(photoURL).into(imgnav);
+//            Glide.with(getActivity()).load(acct.getPhotoUrl()).into(imgnav);
             txtname.setText(name);
             txtgmail.setText(email);
         }

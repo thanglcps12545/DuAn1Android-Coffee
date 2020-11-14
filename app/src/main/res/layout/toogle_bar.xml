@@ -7,8 +7,5 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:fitsSystemWindows="true"
     android:id="@+id/tg_bar"
-    android:background="#A52A2A">
-
-<!--    #FF9800-->
-
+    android:background="#31222B">
 </androidx.appcompat.widget.Toolbar>
