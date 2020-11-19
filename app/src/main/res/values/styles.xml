@@ -1,14 +1,23 @@
 <resources>
 
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
         <item name="colorPrimaryDark">@color/colorBlack</item>
-<!--        <item name="colorAccent">@color/colorAccent</item>-->
+        <!--        <item name="colorAccent">@color/colorAccent</item>-->
         <item name="colorAccent">@color/colorWhite</item>
     </style>
+
+
+
+
+
+
+
+
 
 
     <style name="TextTieuDe">
@@ -21,6 +30,25 @@
         <item name="android:textSize">50dp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="TextDangKi">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:text">Dang Ki</item>
+        <item name="android:textSize">50dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="logoDk">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/ic_face</item>
+    </style>
+
 
     <style name="EditLogin">
         <item name="android:layout_width">match_parent</item>
@@ -77,6 +105,31 @@
         <item name="android:text">Đăng kí</item>
         <item name="android:background">@drawable/botron_button</item>
     </style>
+
+    <style name="btnSignUp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+         <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">10dp</item>
+
+        <item name="android:background">@drawable/botron_button</item>
+    </style>
+
+    <style name="btnTaiKhoanNguoiDung">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginTop">60dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+
+        <item name="android:background">@drawable/botron_button</item>
+    </style>
+
     <style name="btnGoogle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -162,7 +215,7 @@
 
     <style name="backgroundrcv">
         <item name="android:layout_width">320dp</item>
-        <item name="android:layout_height">450dp</item>
+        <item name="android:layout_height">490dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:alpha">0.9</item>
         <item name="android:layout_marginTop">80dp</item>
@@ -175,7 +228,7 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
         <item name="android:text">INFO</item>
-        <item name="android:layout_marginTop">-450dp</item>
+        <item name="android:layout_marginTop">-490dp</item>
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">30sp</item>
@@ -203,5 +256,13 @@
     </style>
 
 
+    <style name="TextInput">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_marginTop">320dp</item>
+        <item name="android:text">Please wait...</item>
+    </style>
 
 </resources>

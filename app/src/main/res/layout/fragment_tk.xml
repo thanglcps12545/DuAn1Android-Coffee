@@ -2,16 +2,80 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/giaodiennguoidung">
-
-
 
 
     <RelativeLayout
         android:id="@+id/backgroundrcv"
         style="@style/backgroundrcv"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="30dp">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullname"
+            style="@style/btnTaiKhoanNguoiDung"
+            android:drawableLeft="@drawable/ic_faceuser"
+            android:drawablePadding="10dp"
+            android:text="abc"
+            app:hintTextColor="@color/colorPrimaryDark">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tkUser"
+            style="@style/btnTaiKhoanNguoiDung"
+            android:layout_marginTop="127dp"
+            android:drawableLeft="@drawable/username"
+            android:drawablePadding="10dp"
+            android:text="abc"
+            android:enabled="false"
+            app:hintTextColor="@color/colorPrimaryDark">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailUser"
+            style="@style/btnTaiKhoanNguoiDung"
+            android:layout_marginTop="193dp"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="10dp"
+            android:text="abc"
+            app:hintTextColor="@color/colorPrimaryDark">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sdtUser"
+            style="@style/btnTaiKhoanNguoiDung"
+            android:layout_marginTop="259dp"
+            android:drawableLeft="@drawable/telephone"
+            android:drawablePadding="10dp"
+            android:text="abc"
+            app:hintTextColor="@color/colorPrimaryDark">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passUser"
+            style="@style/btnTaiKhoanNguoiDung"
+            android:layout_marginTop="325dp"
+            android:drawableLeft="@drawable/padlock"
+            android:drawablePadding="10dp"
+            android:text="abc"
+            android:enabled="false"
+            app:hintTextColor="@color/colorPrimaryDark">
+
+        </com.google.android.material.textfield.TextInputEditText>
+        <Button
+           android:id="@+id/btnUpdateUser"
+            style="@style/btnTaiKhoanNguoiDung"
+            android:text="Update"
+            android:layout_marginTop="391dp"
+
+            />
+
     </RelativeLayout>
 
     <TextView

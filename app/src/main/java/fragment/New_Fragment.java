@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.duan1_coffee.R;
 import com.example.duan1_coffee.news.XML_DOMParser;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -90,13 +91,17 @@ public class New_Fragment extends androidx.fragment.app.Fragment {
 
 
 
+
         //xuat thong tin nguoi dung gmail
         if(mUser != null){
             String name= mUser.getDisplayName();
             String email= mUser.getEmail();
-//            String photoURL= mUser.getPhotoUrl().toString();
-//            Glide.with(getActivity()).load(photoURL).into(imgGG);
-//            Glide.with(getActivity()).load(acct.getPhotoUrl()).into(imgGG);
+            String photoURL= mUser.getPhotoUrl().toString();
+            Glide.with(getActivity()).load(photoURL).into(imgGG);
+//            Glide.with(getActivity()).load(mUser.getPhotoUrl()).into(imgGG);
+//            String imgUrl = "https://graph.facebook.com/";
+
+
             nameGG.setText(name);
             gmailGG.setText(email);
         }

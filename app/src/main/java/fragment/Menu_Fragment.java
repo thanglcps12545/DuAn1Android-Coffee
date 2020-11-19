@@ -13,6 +13,13 @@ public class Menu_Fragment extends androidx.fragment.app.Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_menu, container, false);
+
+
+
+
+
+
         return view;
     }
+
 }

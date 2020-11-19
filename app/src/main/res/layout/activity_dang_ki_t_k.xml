@@ -4,48 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    android:background="@drawable/manhinhchao"
     android:orientation="vertical"
-    android:background="@drawable/manhinhchao">
-
+    android:padding="20dp"
+    tools:context=".DangKiTKActivity"
+    >
+    <ImageView
+        style="@style/logoDk" />
 
     <TextView
-        android:id="@+id/tvLogin"
-        android:text="Đăng Kí"
-        android:layout_marginTop="150dp"
-        style="@style/TextTieuDe" />
-    <EditText
+
+        style="@style/TextDangKi" />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtfullname"
-        android:drawableLeft="@drawable/icongg"
-        style="@style/EditLogin"/>
-    <EditText
+        android:hint="FullName"
+        style="@style/btnSignUp"
+        app:hintTextColor="@color/colorPrimaryDark">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorWhite"
+            android:gravity="bottom"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtUserDk"
-        style="@style/EditLogin"/>
+        android:hint="UserName"
+        style="@style/btnSignUp"
+        app:hintTextColor="@color/colorPrimaryDark">
 
-    <EditText
-        android:id="@+id/txtPasswordDk"
-        style="@style/EditLogin2"
-        />
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorWhite"
+            android:gravity="bottom" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtEmail"
+        android:hint="Email"
+        style="@style/btnSignUp"
+        app:hintTextColor="@color/colorPrimaryDark">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorWhite"
+            android:gravity="bottom"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtSDT"
-        android:drawableLeft="@drawable/icongg"
-        style="@style/EditLogin2"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btnDangKi2"
-            style="@style/btnDangNhap"
-            android:text="Đăng Kí"
-            />
+        android:hint="Phone"
+        style="@style/btnSignUp"
+        app:hintTextColor="@color/colorPrimaryDark">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorWhite"
+            android:gravity="bottom"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPass"
+        android:hint="Password"
+        style="@style/btnSignUp"
+        app:passwordToggleEnabled="true"
+        app:hintTextColor="@color/colorPrimaryDark">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorWhite"
+            android:gravity="bottom"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnDangKi2"
+        style="@style/btnSignUp"
+        android:text="Dang Ki"/>
+
 </LinearLayout>
-
-
 

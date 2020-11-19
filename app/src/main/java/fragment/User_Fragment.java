@@ -83,8 +83,8 @@ public class User_Fragment extends androidx.fragment.app.Fragment {
         if(mUser != null){
             String name= mUser.getDisplayName();
             String email= mUser.getEmail();
-//            String photoURL= mUser.getPhotoUrl().toString();
-//            Glide.with(getActivity()).load(photoURL).into(imgnav);
+            String photoURL= mUser.getPhotoUrl().toString();
+            Glide.with(getActivity()).load(photoURL).into(imgnav);
 //            Glide.with(getActivity()).load(acct.getPhotoUrl()).into(imgnav);
             txtname.setText(name);
             txtgmail.setText(email);

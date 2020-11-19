@@ -15,6 +15,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -42,7 +43,12 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -52,6 +58,7 @@ import model.User;
 public class LoginActivity extends AppCompatActivity {
     Button btnsignin,btndangnhap,btnDangKi;
     EditText txtUser,txtPassword;
+    TextView tvquenmatkhau;
     GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=0;
     CallbackManager mCallbackManager;
@@ -70,6 +77,15 @@ public class LoginActivity extends AppCompatActivity {
         btndangnhap=findViewById(R.id.btnDangNhap);
         txtUser=findViewById(R.id.txtUsername);
         txtPassword=findViewById(R.id.txtPassword);
+        tvquenmatkhau=findViewById(R.id.tvquenmatkhau);
+        tvquenmatkhau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(LoginActivity.this,QuenMatKhauActivity.class);
+                startActivity(i);
+            }
+        });
+
         btnDangKi=findViewById(R.id.btnDangKi);
         btnDangKi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,49 +129,13 @@ public class LoginActivity extends AppCompatActivity {
         btndangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String email=txtUser.getText().toString().trim();
-                final String password=txtPassword.getText().toString().trim();
 
-                if(email.isEmpty()){
-                    txtUser.setError("Bạn chưa nhập email");
-                    txtUser.requestFocus();
+                if(!XacThucUser() | !XacThucPassword()){
                     return;
-                }
-                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    txtUser.setError("Email sai định dạng");
-                    txtUser.requestFocus();
-                    return;
-                }
-//
-//                if(password.isEmpty() || password.length() <6){
-//                    txtPassword.setError("6 char password required");
-//                    txtPassword.requestFocus();
-//                    return;
-//                }
-                if(password.isEmpty()){
-                    txtPassword.setError("Bạn chưa nhập password");
-                    txtPassword.requestFocus();
-                    return;
+                }else {
+                    isUser();
                 }
 
-                //Authenticate the user
-
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            FirebaseDatabase.getInstance().getReference("Users");
-                            Toast.makeText(LoginActivity.this,"Đăng nhập thành công!",Toast.LENGTH_LONG).show();
-                            Intent i=new Intent(LoginActivity.this,MainActivity.class);
-                            startActivity(i);
-                        }else {
-                            Toast.makeText(LoginActivity.this,"Lỗi !"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
-
-//                Intent i=new Intent(LoginActivity.this,MainActivity.class);
-//                startActivity(i);
 
             }
         });
@@ -251,6 +231,87 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
+
+    private Boolean XacThucUser(){
+        String username=txtUser.getText().toString();
+        if(username.isEmpty()){
+            txtUser.setError("Bạn chưa nhập Username");
+            return false;
+        }else {
+            txtUser.setError(null);
+            return true;
+        }
+    }
+
+    private Boolean XacThucPassword(){
+        String password=txtPassword.getText().toString();
+        if(password.isEmpty()){
+            txtPassword.setError("Bạn chưa nhập Password");
+            return false;
+        }else {
+            txtPassword.setError(null);
+            return true;
+        }
+    }
+
+
+//    public void loginUser(View v){
+//      if(!XacThucUser() | !XacThucPassword()){
+//          return;
+//      }else {
+//          isUser();
+//      }
+//    }
+
+    private void isUser() {
+        final String userEnteredUsername = txtUser.getText().toString().trim();
+        final String userEnteredPassword = txtPassword.getText().toString().trim();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+        Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
+
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    txtUser.setError(null);
+                    String passwordFromDB = dataSnapshot.child(userEnteredUsername).child("password").getValue(String.class);
+                    if (passwordFromDB.equals(userEnteredPassword)) {
+                        txtUser.setError(null);
+                        String nameFromDB = dataSnapshot.child(userEnteredUsername).child("name").getValue(String.class);
+                        String usernameFromDB = dataSnapshot.child(userEnteredUsername).child("username").getValue(String.class);
+                        String phoneNoFromDB = dataSnapshot.child(userEnteredUsername).child("phone").getValue(String.class);
+                        String emailFromDB = dataSnapshot.child(userEnteredUsername).child("email").getValue(String.class);
+
+                        Toast.makeText(LoginActivity.this,"Đăng nhập thành công!",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtra("name", nameFromDB);
+                        intent.putExtra("username", usernameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("phone", phoneNoFromDB);
+                        intent.putExtra("password", passwordFromDB);
+                        startActivity(intent);
+
+                    } else {
+                        txtPassword.setError("Sai Password");
+                        txtPassword.requestFocus();
+                    }
+                } else {
+                    txtUser.setError("Username không tồn tại");
+                    txtUser.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+
     @Override
     public void onStart() {
         super.onStart();
@@ -261,7 +322,10 @@ public class LoginActivity extends AppCompatActivity {
         }
         updateUI(currentUser);
 
-    }
+}
+
+
+
 
 
 

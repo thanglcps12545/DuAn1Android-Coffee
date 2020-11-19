@@ -74,5 +74,10 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
+    implementation 'com.android.support:appcompat-v7:29.0.0-alpha3'
+    implementation 'com.android.support:design:29.0.0-alpha3'
+    implementation 'com.android.support:design:29.0.0-alpha1'
+
+    implementation 'com.chaos.view:pinview:1.4.4'
 
 }
